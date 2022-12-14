@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './Header';
+import Register from './Register';
+import Login from './Login';
+import Info from './Info';
+import Gallery from './Gallery';
+import Contact from './Contact';
+import AddMineral from './AddMineral';
+import UpdateMineral from './UpdateMineral';
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Header />
+        <h1>Pocket Geologist</h1>
+        <Routes>
+          <Route path='/add' element={<AddMineral />} />
+          <Route path='/update' element={<UpdateMineral />} />
+          <Route path='/' element={<Gallery />} />
+          <Route path='/info' element={<Info />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register/>} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
