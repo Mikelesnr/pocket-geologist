@@ -1,15 +1,15 @@
 import Header from "./Header";
 
-function Info() {
+function About() {
     
     return (
         <>
         <Header/>
         <div>
-            <h1>Information Page</h1>
+            <h1>About Me</h1>
         </div>
         </>
     )
 }
 
-export default Info;
+export default About;

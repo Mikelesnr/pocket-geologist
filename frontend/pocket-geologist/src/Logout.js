@@ -1,25 +1,22 @@
-import Header from "./Header";
-import {useEffect} from 'react';
+import React,{useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 
-function AddMineral() {
+function Logout() {
 
     const navigate = useNavigate();
-
+    const removeItem = () => localStorage.removeItem("user-info");
+    
     useEffect(()=>{
+        removeItem()
         if (!localStorage.getItem('user-info')){
             navigate("/Login")
         }
     })
-
     return (
-        <>
-        <Header/>
         <div>
-            <h1>Add Mineral Page</h1>
+            <h1>Logging Out .....</h1>
         </div>
-        </>
     )
 }
 
-export default AddMineral
+export default Logout

@@ -41,3 +41,16 @@
   text-decoration: none;
   color: aliceblue;
 }
+.navbar-wrapper a:hover{
+  color: dimgrey;
+}
+
+.brand-link{
+  text-decoration: none;
+  font-weight: 800;
+  color: darkred;
+}
+
+.brand-link:hover{
+  color: black;
+}
