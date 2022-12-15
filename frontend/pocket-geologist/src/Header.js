@@ -1,7 +1,16 @@
-import { Navbar, Nav,Container} from 'react-bootstrap';
-import {Link} from 'react-router-dom';
+import { Navbar, Nav,Container,NavDropdown} from 'react-bootstrap';
+import {Link,useNavigate} from 'react-router-dom';
 
 function Header() {
+    const navigate = useNavigate();
+
+    function Logout() {
+    localStorage.clear();
+    navigate("/register")
+    }
+    
+    let user=JSON.parse(localStorage.getItem('user-info'))
+
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="danger" variant="danger">
@@ -42,9 +51,9 @@ function Header() {
             {
                 localStorage.getItem('user-info') ?
                 <>
-                <Nav.Link>
-                    <Link to="/Logout">logout</Link>
-                </Nav.Link>
+                <NavDropdown title={user && user.name}>
+                    <NavDropdown.Item onClick={Logout}>Logout</NavDropdown.Item>
+                </NavDropdown>
                 </>:
                 <>
             <Nav.Link>

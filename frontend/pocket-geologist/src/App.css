@@ -54,3 +54,11 @@
 .brand-link:hover{
   color: black;
 }
+.dropdown-item,.dropdown-menu{
+  background-color: #5e5c5b !important;
+  margin: 0px !important;
+}
+
+.dropdown-item:hover{
+  color: crimson !important;
+}

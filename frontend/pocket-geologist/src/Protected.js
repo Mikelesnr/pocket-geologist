@@ -1,22 +1,23 @@
 import React,{useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 
-function Logout() {
+function Protected(props) {
+
+    let Cmp = props.Cmp;
 
     const navigate = useNavigate();
-    const removeItem = () => localStorage.removeItem("user-info");
-    
+
     useEffect(()=>{
-        removeItem()
         if (!localStorage.getItem('user-info')){
-            navigate("/Login")
+            navigate("/register")
         }
-    })
+    },[navigate])
+
     return (
         <div>
-            <h1>Logging Out .....</h1>
+            <Cmp/>
         </div>
     )
 }
 
-export default Logout
+export default Protected
