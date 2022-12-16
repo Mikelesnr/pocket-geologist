@@ -9,7 +9,14 @@ function Header() {
     navigate("/login")
     }
     
-    let user=JSON.parse(localStorage.getItem('user-info'))
+    let user=JSON.parse(localStorage.getItem('user-info'));
+    //displays add mineral and update mineral for admin
+    let admin=false
+    if (user){
+        if(user.type === "admin"){
+            admin=true
+        }
+    }
 
     return (
         <div>
@@ -33,13 +40,24 @@ function Header() {
                 <Link to="/about">About Me</Link>
             </Nav.Link>
             {
-                localStorage.getItem('user-info') ?
+                localStorage.getItem('user-info') && admin?
                 <>
                 <Nav.Link>
-                <Link to="/add">Add Mineral</Link>
-            </Nav.Link>
-            <Nav.Link>
-                <Link to="/update">Update Mineral</Link>
+                <Link to="/all">All Minerals</Link>
+                </Nav.Link>
+                <NavDropdown title="Update Minerals">
+                    <NavDropdown.Item><Link to="/add">Add Mineral</Link></NavDropdown.Item>
+                    <NavDropdown.Item><Link to="/update">Update Mineral</Link></NavDropdown.Item>
+                </NavDropdown>
+                </>:
+                <>
+                </>
+            }
+             {
+                localStorage.getItem('user-info') && !admin?
+                <>
+                <Nav.Link>
+                <Link to="/all">All Minerals</Link>
             </Nav.Link>
                 </>:
                 <>

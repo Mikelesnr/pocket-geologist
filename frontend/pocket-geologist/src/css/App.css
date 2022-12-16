@@ -62,3 +62,7 @@
 .dropdown-item:hover{
   color: crimson !important;
 }
+
+.col-sm-6 button{
+  margin-bottom: 50px;
+}

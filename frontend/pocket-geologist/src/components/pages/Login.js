@@ -16,7 +16,6 @@ function Login() {
 
     async function signin(){
         let item = {email,password};
-        console.warn(item);
 
         //Fetching user registration api
         let result = await fetch("http://127.0.0.1:8000/api/login",{
@@ -29,8 +28,14 @@ function Login() {
         });
 
         result = await result.json();
+        if (!result.error){
         localStorage.setItem('user-info', JSON.stringify(result));
         navigate("/")
+        }
+        else{
+            localStorage.clear();
+            alert("Email or password incorrect");
+        }
     }
 
     return (

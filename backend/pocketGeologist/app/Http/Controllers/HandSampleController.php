@@ -19,11 +19,17 @@ class HandSampleController extends Controller
         $handSample->transparency = $req->input('transparency');
         $handSample->op = $req->input('op');
         $handSample->sg = $req->input('sg');
+        $handSample->group = $req->input('group');
         $handSample->fracture = $req->input('fracture');
         $handSample->habit = $req->input('habit');
         $handSample->description = $req->input('description');
         $handSample->image_path = $req->file('file')->store('images');
         $handSample->save();
         return $handSample;
+    }
+
+    function displayAll()
+    {
+        return HandSample::all();
     }
 }
