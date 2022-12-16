@@ -6,7 +6,7 @@ function Header() {
 
     function Logout() {
     localStorage.clear();
-    navigate("/register")
+    navigate("/login")
     }
     
     let user=JSON.parse(localStorage.getItem('user-info'))

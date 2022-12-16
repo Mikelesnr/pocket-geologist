@@ -4,20 +4,48 @@ import Header from '../common/Header';
 
 function Login() {
 
-    const navigate = useNavigate();
-
     useEffect(()=>{
         if (localStorage.getItem('user-info')){
             navigate("/")
         }
     })
-    
+
+    const [password,setPassword] = useState("")
+    const [email,setEmail] = useState("");
+    const navigate = useNavigate();
+
+    async function signin(){
+        let item = {email,password};
+        console.warn(item);
+
+        //Fetching user registration api
+        let result = await fetch("http://127.0.0.1:8000/api/login",{
+            method:"POST",
+            body:JSON.stringify(item),
+            headers:{
+                "Content-Type":"application/json",
+                "Accept":"application/json"
+            }
+        });
+
+        result = await result.json();
+        localStorage.setItem('user-info', JSON.stringify(result));
+        navigate("/")
+    }
+
     return (
-        <div>
-            <Header/>
-            <h1>My Login Page</h1>
+        <>
+        <Header/>
+        <div className="col-sm-6 offset-sm-3">
+            <h1>Login Page</h1>
+            <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} className="form-control" placeholder="email"/>
+            <br></br>
+            <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} className="form-control" placeholder="password"/>
+            <br></br>
+            <button onClick={signin} className='btn btn-secondary'>Sign In</button>
         </div>
+        </>
     )
 }
 
-export default Login
+export default Login;

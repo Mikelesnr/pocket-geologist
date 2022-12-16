@@ -9,7 +9,7 @@ function Protected(props) {
 
     useEffect(()=>{
         if (!localStorage.getItem('user-info')){
-            navigate("/register")
+            navigate("/login")
         }
     },[navigate])
 

@@ -17,7 +17,6 @@ function Register() {
 
     async function signup(){
         let item = {name,email,password};
-        console.warn(item);
 
         //Fetching user registration api
         let result = await fetch("http://127.0.0.1:8000/api/register",{
@@ -31,7 +30,7 @@ function Register() {
 
         result = await result.json();
         localStorage.setItem('user-info', JSON.stringify(result));
-        navigate("/add")
+        navigate("/")
     }
 
     return (
