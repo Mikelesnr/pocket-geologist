@@ -1,15 +1,15 @@
-import './App.css';
+import './css/App.css';
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 // import Header from './Header';
-import Register from './Register';
-import Login from './Login';
-import Info from './Info';
-import About from './About';
-import Gallery from './Gallery';
-import Contact from './Contact';
-import AddMineral from './AddMineral';
-import UpdateMineral from './UpdateMineral';
-import Protected from './Protected';
+import Register from './components/pages/Register';
+import Login from './components/pages/Login';
+import Info from './components/pages/Info';
+import About from './components/pages/About';
+import Gallery from './components/common/Gallery';
+import Contact from './components/pages/Contact';
+import AddMineral from './components/pages/AddMineral';
+import UpdateMineral from './components/pages/UpdateMineral';
+import Protected from './components/Protected';
 
 function App() {
   return (
