@@ -3,7 +3,7 @@ import axios from 'axios';
 import React,{useState,useEffect} from 'react';
 import Table from 'react-bootstrap/Table';
 
-function Display() {
+function Delete() {
     const [minerals,setMinerals]=useState([]);
 
     useEffect(()=>{
@@ -17,7 +17,14 @@ function Display() {
         
     }
 
-    console.log(minerals);
+    async function deleteOperation(n){
+        let result = await fetch("http://127.0.0.1:8000/api/delete/"+n,{
+            method:'DELETE'
+        });
+        result= await result.json();
+        alert(result);
+        fetchData();
+    }
 
     return(
         <>
@@ -31,6 +38,7 @@ function Display() {
                 <th>Group</th>
                 <th>Description</th>
                 <th>Image</th>
+                <th>Operations</th>
             </tr>
             </thead>
             <tbody>
@@ -45,7 +53,9 @@ function Display() {
                                 <h4 className='hideBig'>Name: {mineral.mineral}</h4>
                                 <h5 className='hideBig'>Group: {mineral.group}</h5>
                                 <p className='hideBig'><b>Description: </b>{mineral.description}</p>
+                                <span className='hideBig'></span>
                             </td>
+                            <td><button className='btn btn-red' onClick={()=>deleteOperation(mineral.mineral)}>delete</button></td>
                         </tr>    
                     )
                 }
@@ -60,4 +70,4 @@ function Display() {
 
 }
 
-export default Display;
+export default Delete;

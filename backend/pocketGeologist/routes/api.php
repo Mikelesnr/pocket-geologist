@@ -28,3 +28,5 @@ Route::post('login', [UserController::class, 'login']);
 Route::post('addMineral', [HandSampleController::class, 'addMineral']);
 
 Route::get('displayAll', [HandSampleController::class, 'displayAll']);
+
+Route::delete('delete/{is}', [HandSampleController::class, 'delete']);
