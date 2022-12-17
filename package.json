@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "axios": "^0.24.0",
+    "eslint-plugin-react-hooks": "^5.0.0-next-84a0a171e-20221214"
+  }
+}

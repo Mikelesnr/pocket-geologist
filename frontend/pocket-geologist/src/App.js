@@ -1,6 +1,6 @@
 import './css/App.css';
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
-// import Header from './Header';
+import Display from './components/pages/Display';
 import Register from './components/pages/Register';
 import Login from './components/pages/Login';
 import Info from './components/pages/Info';
@@ -20,6 +20,7 @@ function App() {
           <Route path='/add' element={<Protected Cmp={AddMineral} />} />
           <Route path='/update' element={<Protected Cmp={UpdateMineral} />} />
           <Route path='/' element={<Gallery />} />
+          <Route path='/all' element={<Display />} />
           <Route path='/info' element={<Info />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
