@@ -7,10 +7,30 @@
   pointer-events: none;
 }
 
+@media all and (min-width: 1200px){
+.hideBig{
+  display: none;
+}
+.min-pic{
+  width: 200px;
+  height: 200px;
+}
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+@media all and (max-width: 1200px) {
+ .hide{
+  display: none ;
+ }
+
+ .min-pic{
+  width: 150px;
+  height: 150px;
+}
 }
 
 .App-header {
