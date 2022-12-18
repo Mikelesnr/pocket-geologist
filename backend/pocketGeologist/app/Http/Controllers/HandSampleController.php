@@ -42,4 +42,16 @@ class HandSampleController extends Controller
             return ["result" => "Operation failed"];
         }
     }
+
+    function displayOne($name)
+    {
+        $result = HandSample::all();
+        for ($i = 0; $i < count($result); $i++) {
+            if ($result[$i]->mineral == $name) {
+                return $result[$i];
+            } else {
+                continue;
+            }
+        }
+    }
 }

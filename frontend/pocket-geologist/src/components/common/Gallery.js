@@ -4,7 +4,7 @@ function Gallery() {
     return (
         <>
         <Header/>
-        <div>
+        <div className="pdng-top">
             <div className=" album py-5 bg-light">
         <h2>Gallery</h2>
         <div className="container">

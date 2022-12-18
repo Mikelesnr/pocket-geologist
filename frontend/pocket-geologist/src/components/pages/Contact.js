@@ -4,7 +4,7 @@ function Contact() {
     return (
         <>
         <Header/>
-        <div>
+        <div className="pdng-top pdng-top">
             <h1>Contact Page</h1>
         </div>
         </>

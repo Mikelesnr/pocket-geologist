@@ -22,7 +22,7 @@ function Display() {
     return(
         <>
         <Header/>
-        <div className='col-sm-8 offset-sm-2'>
+        <div className='col-sm-8 offset-sm-2 pdng-top'>
         <h1>Minerals</h1>
         <Table>
             <thead className='hide'>

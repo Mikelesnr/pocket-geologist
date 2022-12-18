@@ -29,4 +29,6 @@ Route::post('addMineral', [HandSampleController::class, 'addMineral']);
 
 Route::get('displayAll', [HandSampleController::class, 'displayAll']);
 
-Route::delete('delete/{is}', [HandSampleController::class, 'delete']);
+Route::delete('delete/{name}', [HandSampleController::class, 'delete']);
+
+Route::get('displayOne/{name}', [HandSampleController::class, 'displayOne']);

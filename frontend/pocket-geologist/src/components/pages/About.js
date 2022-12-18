@@ -5,7 +5,7 @@ function About() {
     return (
         <>
         <Header/>
-        <div>
+        <div className="pdng-top">
             <h1>About Me</h1>
         </div>
         </>

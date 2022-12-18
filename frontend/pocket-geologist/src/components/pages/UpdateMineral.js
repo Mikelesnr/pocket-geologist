@@ -4,10 +4,10 @@ function UpdateMineral() {
 
     return (
         <>
-        <Header/>
-        <div>
-            <h1>Update Mineral Page</h1>
-        </div>
+            <Header />
+            <div className="pdng-top">
+                <h1>Update Mineral Page</h1>
+            </div>
         </>
     )
 }

@@ -7,6 +7,7 @@ import Login from './components/pages/Login';
 import Info from './components/pages/Info';
 import About from './components/pages/About';
 import Gallery from './components/common/Gallery';
+import Footer from './components/common/Footer';
 import Contact from './components/pages/Contact';
 import AddMineral from './components/pages/AddMineral';
 import UpdateMineral from './components/pages/UpdateMineral';
@@ -29,6 +30,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register/>} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </div>
   );

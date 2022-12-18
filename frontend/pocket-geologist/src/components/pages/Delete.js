@@ -1,72 +1,72 @@
 import Header from '../common/Header';
 import axios from 'axios';
-import React,{useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Table from 'react-bootstrap/Table';
 
 function Delete() {
-    const [minerals,setMinerals]=useState([]);
+    const [minerals, setMinerals] = useState([]);
 
-    useEffect(()=>{
+    useEffect(() => {
         fetchData();
-        },[]);
+    }, []);
 
 
-    const fetchData = async ()=>{
-        const {data} = await axios.get("http://127.0.0.1:8000/api/displayAll");
+    const fetchData = async () => {
+        const { data } = await axios.get("http://127.0.0.1:8000/api/displayAll");
         setMinerals(data);
-        
+
     }
 
-    async function deleteOperation(n){
-        let result = await fetch("http://127.0.0.1:8000/api/delete/"+n,{
-            method:'DELETE'
+    async function deleteOperation(n) {
+        let result = await fetch("http://127.0.0.1:8000/api/delete/" + n, {
+            method: 'DELETE'
         });
-        result= await result.json();
+        result = await result.json();
         alert(result);
         fetchData();
     }
 
-    return(
+    return (
         <>
-        <Header/>
-        <div className='col-sm-8 offset-sm-2'>
-        <h1>Minerals</h1>
-        <Table>
-            <thead className='hide'>
-            <tr>
-                <th>Name</th>
-                <th>Group</th>
-                <th>Description</th>
-                <th>Image</th>
-                <th>Operations</th>
-            </tr>
-            </thead>
-            <tbody>
-                {
-                    minerals.map((mineral)=>
-                    <tr>
-                            <td className='hide'><h4>{mineral.mineral}</h4></td>
-                            <td className='hide'>{mineral.group}</td>
-                            <td className='hide'><p>{mineral.description}</p></td>
-                            <td>
-                                <img className='min-pic' src={"http://localhost:8000/"+mineral.image_path} alt="Mineral pic"/>
-                                <h4 className='hideBig'>Name: {mineral.mineral}</h4>
-                                <h5 className='hideBig'>Group: {mineral.group}</h5>
-                                <p className='hideBig'><b>Description: </b>{mineral.description}</p>
-                                <span className='hideBig'></span>
-                            </td>
-                            <td><button className='btn btn-red' onClick={()=>deleteOperation(mineral.mineral)}>delete</button></td>
-                        </tr>    
-                    )
-                }
-            </tbody>            
-        </Table>
-        </div>
-        
+            <Header />
+            <div className='col-sm-8 offset-sm-2 pdng-top'>
+                <h1>Minerals</h1>
+                <Table>
+                    <thead className='hide'>
+                        <tr>
+                            <th>Name</th>
+                            <th>Group</th>
+                            <th>Description</th>
+                            <th>Image</th>
+                            <th>Operations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            minerals.map((mineral) =>
+                                <tr>
+                                    <td className='hide'><h4>{mineral.mineral}</h4></td>
+                                    <td className='hide'>{mineral.group}</td>
+                                    <td className='hide'><p>{mineral.description}</p></td>
+                                    <td>
+                                        <img className='min-pic' src={"http://localhost:8000/" + mineral.image_path} alt="Mineral pic" />
+                                        <h4 className='hideBig'>Name: {mineral.mineral}</h4>
+                                        <h5 className='hideBig'>Group: {mineral.group}</h5>
+                                        <p className='hideBig'><b>Description: </b>{mineral.description}</p>
+                                        <span className='hideBig'></span>
+                                    </td>
+                                    <td><button className='btn btn-red' onClick={() => deleteOperation(mineral.mineral)}>delete</button></td>
+                                </tr>
+                            )
+                        }
+                    </tbody>
+                </Table>
+            </div>
+
         </>
     )
 
-  
+
 
 }
 

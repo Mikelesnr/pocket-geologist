@@ -43,7 +43,7 @@ function AddMineral() {
     return (
         <>
         <Header/>
-        <div className="col-sm-6 offset-sm-3">
+        <div className="col-sm-6 offset-sm-3 pdng-top">
             <h1>Add Mineral</h1>
             <input type="text" className="form-control" onChange={(e)=>setName(e.target.value)} placeholder="name"></input><br/>
             <input type="text" className="form-control" onChange={(e)=>setColor(e.target.value)} placeholder="color"></input><br/>
