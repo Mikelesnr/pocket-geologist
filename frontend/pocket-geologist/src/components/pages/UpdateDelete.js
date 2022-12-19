@@ -13,13 +13,13 @@ function UpdateDelete() {
 
 
     const fetchData = async () => {
-        const { data } = await axios.get("http://127.0.0.1:8000/api/displayAll");
+        const { data } = await axios.get("http://localhost:8000/api/displayAll");
         setMinerals(data);
 
     }
 
     async function deleteOperation(n) {
-        let result = await fetch("http://127.0.0.1:8000/api/delete/" + n, {
+        let result = await fetch("http://localhost:8000/api/delete/" + n, {
             method: 'DELETE'
         });
         result = await result.json();

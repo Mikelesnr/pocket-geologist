@@ -18,7 +18,7 @@ function Login() {
         let item = {email,password};
 
         //Fetching user registration api
-        let result = await fetch("http://127.0.0.1:8000/api/login",{
+        let result = await fetch("http://localhost:8000/api/login",{
             method:"POST",
             body:JSON.stringify(item),
             headers:{
@@ -48,6 +48,7 @@ function Login() {
             <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} className="form-control" placeholder="password"/>
             <br></br>
             <button onClick={signin} className='btn btn-secondary'>Sign In</button>
+            
         </div>
         </>
     )

@@ -28,11 +28,34 @@ class HandSampleController extends Controller
         return $handSample;
     }
 
+    //Updates mineral in database
+    function updateMineral(Request $req)
+    {
+        $handSample = HandSample::find($req->input('id'));
+        $handSample->mineral = $req->input('name');
+        $handSample->color = $req->input('color');
+        $handSample->streak = $req->input('streak');
+        $handSample->luster = $req->input('luster');
+        $handSample->hardness = $req->input('hardness');
+        $handSample->transparency = $req->input('transparency');
+        $handSample->op = $req->input('op');
+        $handSample->sg = $req->input('sg');
+        $handSample->group = $req->input('group');
+        $handSample->fracture = $req->input('fracture');
+        $handSample->habit = $req->input('habit');
+        $handSample->description = $req->input('description');
+        $handSample->image_path = $req->file('file')->store('images');
+        $handSample->save();
+        return $handSample;
+    }
+
+    //returns all minerals in the database
     function displayAll()
     {
         return HandSample::all();
     }
 
+    //takes in mineral name and removes it from database
     function delete($name)
     {
         $result = HandSample::where('mineral', $name)->delete();
@@ -43,6 +66,7 @@ class HandSampleController extends Controller
         }
     }
 
+    //takes in mineral name and returns the mineral properties
     function displayOne($name)
     {
         $result = HandSample::all();
@@ -53,5 +77,31 @@ class HandSampleController extends Controller
                 continue;
             }
         }
+    }
+
+    //returns mineral based on a keyword
+    function search($key)
+    {
+        $data = [];
+        $name = HandSample::where('mineral', 'Like', "%$key%")->get();
+        $group = HandSample::where('group', 'Like', "%$key%")->get();
+        for ($i = 0; $i < count($name); $i++) {
+            array_push($data, $name[$i]);
+        }
+        for ($i = 0; $i < count($group); $i++) {
+            if (in_array($group[$i], $data)) {
+                continue;
+            } else {
+                array_push($data, $group[$i]);
+            }
+        }
+        return $data;
+    }
+
+    //returns minerals in a single group
+    function displayGroup($groupName)
+    {
+        $group = HandSample::where('group', 'Like', "%$groupName%")->get();
+        return $group;
     }
 }

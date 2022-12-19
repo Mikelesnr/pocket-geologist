@@ -32,3 +32,9 @@ Route::get('displayAll', [HandSampleController::class, 'displayAll']);
 Route::delete('delete/{name}', [HandSampleController::class, 'delete']);
 
 Route::get('displayOne/{name}', [HandSampleController::class, 'displayOne']);
+
+Route::post('updateMineral', [HandSampleController::class, 'updateMineral']);
+
+Route::get('search/{key}', [HandSampleController::class, 'search']);
+
+Route::get('displayGroup/{groupName}', [HandSampleController::class, 'displayGroup']);

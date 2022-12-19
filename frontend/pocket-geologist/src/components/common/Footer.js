@@ -1,7 +1,7 @@
 function Footer() {
     return (
         <div>
-            <footer class="footer d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
+            <footer class="footer d-flex flex-wrap justify-content-between align-items-center py-3 border-top bg-danger variant-danger">
                 <span class="mb-3 mb-md-0 text-muted">© 2022 Michael Mwanza.</span>
                 <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
                     <li className="ms-3">

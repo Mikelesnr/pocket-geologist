@@ -1,5 +1,4 @@
 import React,{useState} from 'react';
-import {useNavigate} from 'react-router-dom';
 import Header from "../common/Header";
 
 function AddMineral() {
@@ -17,7 +16,7 @@ function AddMineral() {
     const [transparency,setTransparency] = useState("");
     const [description,setDescription] = useState("");
     const [file,setFile] = useState("");
-
+    
     async function addMineral(){
         const formData = new FormData();
         formData.append("name",name)
@@ -33,9 +32,10 @@ function AddMineral() {
         formData.append("transparency",transparency)
         formData.append("description",description)
         formData.append("file",file)
-        let result = await fetch("http://127.0.0.1:8000/api/addMineral",{
+        // eslint-disable-next-line no-unused-vars
+        let result = await fetch("http://localhost:8000/api/addMineral",{
             method:'POST',
-            body:formData
+            body:formData,
         });
         alert("Data has been saved")
     }
