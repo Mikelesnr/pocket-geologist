@@ -47,8 +47,7 @@ function Header() {
                                         </Nav.Link>
                                         <NavDropdown title="Update Minerals">
                                             <NavDropdown.Item><Link to="/add">Add Mineral</Link></NavDropdown.Item>
-                                            <NavDropdown.Item><Link to="/delete">Delete Mineral</Link></NavDropdown.Item>
-                                            <NavDropdown.Item><Link to="/update">Update Mineral</Link></NavDropdown.Item>
+                                            <NavDropdown.Item><Link to="/delete">Update Delete</Link></NavDropdown.Item>
                                         </NavDropdown>
                                     </> :
                                     <>

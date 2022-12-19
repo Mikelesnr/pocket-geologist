@@ -59,7 +59,7 @@ function AddMineral() {
             <textarea type="text" className="form-control" onChange={(e)=>setDescription(e.target.value)} placeholder="description"></textarea><br/>
             <h3>Select Image</h3><br/>
             <input type="file" className="form-control" onChange={(e)=>setFile(e.target.files[0])} placeholder="image"></input><br/>
-            <><button className="btn btn-secondary" onClick={addMineral}>Add Mineral</button><br/></>
+            <><button className="btn btn-secondary mb" onClick={addMineral}>Add Mineral</button><br/></>
         </div>
         </>
     )

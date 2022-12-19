@@ -24,7 +24,7 @@ function Display() {
         <Header/>
         <div className='col-sm-8 offset-sm-2 pdng-top'>
         <h1>Minerals</h1>
-        <Table>
+        <Table className="mb">
             <thead className='hide'>
             <tr>
                 <th>Name</th>

@@ -2,8 +2,9 @@ import Header from '../common/Header';
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import Table from 'react-bootstrap/Table';
+import {Link} from 'react-router-dom';
 
-function Delete() {
+function UpdateDelete() {
     const [minerals, setMinerals] = useState([]);
 
     useEffect(() => {
@@ -55,7 +56,10 @@ function Delete() {
                                         <p className='hideBig'><b>Description: </b>{mineral.description}</p>
                                         <span className='hideBig'></span>
                                     </td>
-                                    <td><button className='btn btn-red' onClick={() => deleteOperation(mineral.mineral)}>delete</button></td>
+                                    <td>
+                                        <span className='btn btn-update flex'><Link to={"/update/?name="+mineral.mineral+""}>Update</Link></span>
+                                        <span className='btn btn-red flex' onClick={() => deleteOperation(mineral.mineral)}>Delete</span>
+                                    </td>
                                 </tr>
                             )
                         }
@@ -70,4 +74,4 @@ function Delete() {
 
 }
 
-export default Delete;
+export default UpdateDelete;
