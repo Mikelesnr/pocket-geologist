@@ -36,9 +36,10 @@ function Header() {
                             <Nav.Link>
                                 <Link to="/contact">Contact Us</Link>
                             </Nav.Link>
-                            <Nav.Link>
-                                <Link to="/about">About Me</Link>
-                            </Nav.Link>
+                            <NavDropdown title="Search">
+                                <NavDropdown.Item><Link to="/searchK">Keyword Search</Link></NavDropdown.Item>
+                                <NavDropdown.Item><Link to="/searchK">Property Search</Link></NavDropdown.Item>
+                            </NavDropdown>
                             {
                                 localStorage.getItem('user-info') && admin ?
                                     <>
@@ -69,6 +70,9 @@ function Header() {
                             {
                                 localStorage.getItem('user-info') ?
                                     <>
+                                        <Nav.Link>
+                                            <Link to="/about">About Me</Link>
+                                        </Nav.Link>
                                         <NavDropdown title={user && user.name}>
                                             <NavDropdown.Item onClick={Logout}>Logout</NavDropdown.Item>
                                         </NavDropdown>
