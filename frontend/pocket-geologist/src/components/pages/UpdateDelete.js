@@ -47,17 +47,21 @@ function UpdateDelete() {
                             minerals.map((mineral) =>
                                 <tr>
                                     <td className='hide'><h4>{mineral.mineral}</h4></td>
-                                    <td className='hide'>{mineral.group}</td>
+                                    <td className='hide'>
+                                        <Link className="group-hover" to={"/displayGroup/?group="+mineral.group}>{mineral.group}</Link>
+                                    </td>
                                     <td className='hide'><p>{mineral.description}</p></td>
                                     <td>
                                         <img className='min-pic' src={"http://localhost:8000/" + mineral.image_path} alt="Mineral pic" />
                                         <h4 className='hideBig'>Name: {mineral.mineral}</h4>
-                                        <h5 className='hideBig'>Group: {mineral.group}</h5>
+                                        <h5 className='hideBig'>
+                                            Group: <Link className="group-hover" to={"/displayGroup/?group="+mineral.group}>{mineral.group}</Link>
+                                        </h5>
                                         <p className='hideBig'><b>Description: </b>{mineral.description}</p>
                                         <span className='hideBig'></span>
                                     </td>
                                     <td>
-                                        <span className='btn btn-update flex'><Link to={"/update/?name="+mineral.mineral+""}>Update</Link></span>
+                                        <span className='btn btn-update flex'><Link to={"/update/?name="+mineral.mineral}>Update</Link></span>
                                         <span className='btn btn-red flex' onClick={() => deleteOperation(mineral.mineral)}>Delete</span>
                                     </td>
                                 </tr>

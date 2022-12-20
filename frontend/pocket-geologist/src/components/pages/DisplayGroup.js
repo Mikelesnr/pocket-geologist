@@ -1,31 +1,34 @@
-import React,{useState} from 'react';
-import Header from "../common/Header";
+import Header from '../common/Header';
+import axios from 'axios';
+import React,{useState,useEffect} from 'react';
 import Table from 'react-bootstrap/Table';
 import {Link} from 'react-router-dom';
+import { useSearchParams } from "react-router-dom";
 
-function DisplaySearch() {
+function DisplayGroup() {
+    const [minerals,setMinerals]=useState([]);
+    const [search]=useSearchParams();
+    const checkValue = search.get('group');
 
-    const[data,setData] = useState([]);
+    useEffect(()=>{
+        fetchData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        },[]);
 
-    async function search(key){
 
-        let result= await fetch("http://localhost:8000/api/search/"+key);
-        result = await result.json();
-        console.log(result);
-        setData(result);
-    }    
-    
+    const fetchData = async () => {
+        const { data } = await axios.get("http://localhost:8000/api/displayGroup/"+checkValue);
+        setMinerals(data);
+    }
 
-    return (
+    console.log(minerals);
+
+    return(
         <>
         <Header/>
-        <div className="col-sm-6 offset-sm-3 pdng-top">
-            <h1>Search Mineral</h1>
-            <br/>
-            <input type="text" onChange={(e)=>search(e.target.value)} className="form-control" placeholder='Search Mineral'></input><br/>
-        </div>
-        <div className="col-sm-8 offset-sm-2 pdng-top">
-            <Table className="mb">
+        <div className='col-sm-8 offset-sm-2 pdng-top'>
+        <h1>Group: {checkValue}</h1>
+        <Table className="mb">
             <thead className='hide'>
             <tr>
                 <th>Name</th>
@@ -36,7 +39,7 @@ function DisplaySearch() {
             </thead>
             <tbody>
                 {
-                    data.map((mineral)=>
+                    minerals.map((mineral)=>
                     <tr>
                             <td className='hide'><h4>{mineral.mineral}</h4></td>
                             <td className='hide'>
@@ -57,8 +60,12 @@ function DisplaySearch() {
             </tbody>            
         </Table>
         </div>
+        
         </>
     )
+
+  
+
 }
 
-export default DisplaySearch;
+export default DisplayGroup;

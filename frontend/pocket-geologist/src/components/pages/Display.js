@@ -2,6 +2,7 @@ import Header from '../common/Header';
 import axios from 'axios';
 import React,{useState,useEffect} from 'react';
 import Table from 'react-bootstrap/Table';
+import {Link} from 'react-router-dom';
 
 function Display() {
     const [minerals,setMinerals]=useState([]);
@@ -38,12 +39,16 @@ function Display() {
                     minerals.map((mineral)=>
                     <tr>
                             <td className='hide'><h4>{mineral.mineral}</h4></td>
-                            <td className='hide'>{mineral.group}</td>
+                            <td className='hide'>
+                                <Link className="group-hover" to={"/displayGroup/?group="+mineral.group}>{mineral.group}</Link>
+                            </td>
                             <td className='hide'><p>{mineral.description}</p></td>
                             <td>
                                 <img className='min-pic' src={"http://localhost:8000/"+mineral.image_path} alt="Mineral pic"/>
                                 <h4 className='hideBig'>Name: {mineral.mineral}</h4>
-                                <h5 className='hideBig'>Group: {mineral.group}</h5>
+                                <h5 className='hideBig'>
+                                    Group: <Link className="group-hover" to={"/displayGroup/?group="+mineral.group}>{mineral.group}</Link>
+                                </h5>
                                 <p className='hideBig'><b>Description: </b>{mineral.description}</p>
                             </td>
                         </tr>    

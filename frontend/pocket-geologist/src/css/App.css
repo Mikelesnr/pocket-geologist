@@ -121,6 +121,15 @@ footer{
   text-decoration:  none;
 }
 
+.group-hover{
+  color: rgb(31, 128, 128) !important;
+  text-decoration:  none;
+}
+
+.group-hover:hover{
+  color: rgb(102, 230, 230) !important
+}
+
 .flex{
   display: flex;
   margin-top: 10px;

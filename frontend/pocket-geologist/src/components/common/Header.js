@@ -29,7 +29,9 @@ function Header() {
                             <Nav.Link>
                                 <Link to="/">Home</Link>
                             </Nav.Link>
-
+                            <Nav.Link>
+                                <Link to="/all">All Minerals</Link>
+                            </Nav.Link>
                             <Nav.Link>
                                 <Link to="/info">Information</Link>
                             </Nav.Link>
@@ -43,9 +45,6 @@ function Header() {
                             {
                                 localStorage.getItem('user-info') && admin ?
                                     <>
-                                        <Nav.Link>
-                                            <Link to="/all">All Minerals</Link>
-                                        </Nav.Link>
                                         <NavDropdown title="Update Minerals">
                                             <NavDropdown.Item><Link to="/add">Add Mineral</Link></NavDropdown.Item>
                                             <NavDropdown.Item><Link to="/delete">Update Delete</Link></NavDropdown.Item>
