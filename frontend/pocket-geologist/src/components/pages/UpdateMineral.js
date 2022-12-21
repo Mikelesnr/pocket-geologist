@@ -4,8 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 
 function UpdateMineral() {
-  // eslint-disable-next-line no-unused-vars
-  const [search,setSearch]=useSearchParams();
+  const [search]=useSearchParams();
     const checkValue = search.get('name');
 
     const [mineral,setMineral]=useState("");
@@ -32,9 +31,23 @@ function UpdateMineral() {
 
     const fetchData = async () => {
         const { data } = await axios.get("http://localhost:8000/api/displayOne/"+checkValue);
-        setMineral(data);
         setId(data.id);
+        setMineral(data);
+        setName(data.mineral);
+        setColor(data.color);
+        setFracture(data.fracture);
+        setHabit(data.habit);
+        setHardness(data.hardness);
+        setLuster(data.luster);
+        setOp(data.op);
+        setSg(data.sg);
+        setGroup(data.group);
+        setStreak(data.streak);
+        setTransparency(data.transparency);
+        setDescription(data.description);
+        setFile(data.file);
     }
+    console.log(id,name,color,luster,streak,habit,hardness,transparency,description,op,sg,group,file)
 
 
     async function addUpdate(){
@@ -53,42 +66,35 @@ function UpdateMineral() {
         formData.append("transparency",transparency)
         formData.append("description",description)
         formData.append("file",file)
+        // eslint-disable-next-line no-unused-vars
         let result = await fetch("http://localhost:8000/api/updateMineral",{
             method:'POST',
             body:formData,
         });
-        //result= await result.json();
-        console.log(result);
-        console.log(formData);
         alert("Data has been saved")
     }
-    console.log(name,color,fracture,habit,hardness,luster,op,sg,group,streak,transparency,description,file);
-  
-    console.log(mineral.image_path)
 
   return (
     <>
     <Header/>
     <div className="col-sm-6 offset-sm-3 pdng-top mb">
             <h1>Update Mineral</h1>
-            <form>
-            <input type="text" className="form-control" onSubmit={(e)=>setName(e.target.value)} defaultValue={mineral.mineral}></input><br/>
-            <input type="text" className="form-control" onSubmit={(e)=>setColor(e.target.value)} defaultValue={mineral.color}></input><br/>
-            <input type="text" className="form-control" onSubmit={(e)=>setFracture(e.target.value)} defaultValue={mineral.fracture}></input><br/>
-            <input type="text" className="form-control" onSubmit={(e)=>setHabit(e.target.value)} defaultValue={mineral.habit}></input><br/>
-            <input type="text" className="form-control" onSubmit={(e)=>setHardness(e.target.value)} defaultValue={mineral.hardness}></input><br/>
-            <input type="text" className="form-control" onSubmit={(e)=>setLuster(e.target.value)} defaultValue={mineral.luster}></input><br/>
-            <input type="text" className="form-control" onSubmit={(e)=>setOp(e.target.value)} defaultValue={mineral.op}></input><br/>
-            <input type="text" className="form-control" onSubmit={(e)=>setSg(e.target.value)} defaultValue={mineral.sg}></input><br/>
-            <input type="text" className="form-control" onSubmit={(e)=>setStreak(e.target.value)} defaultValue={mineral.streak}></input><br/>
-            <input type="text" className="form-control" onSubmit={(e)=>setGroup(e.target.value)} defaultValue={mineral.group}></input><br/>
-            <input type="text" className="form-control" onSubmit={(e)=>setTransparency(e.target.value)} defaultValue={mineral.transparency}></input><br/>
-            <textarea type="text" className="form-control" onSubmit={(e)=>setDescription(e.target.value)} defaultValue={mineral.description}></textarea><br/>
+            <input type="text" className="form-control" onChange={(e)=>setName(e.target.value)} defaultValue={mineral.mineral}></input><br/>
+            <input type="text" className="form-control" onChange={(e)=>setColor(e.target.value)} defaultValue={mineral.color}></input><br/>
+            <input type="text" className="form-control" onChange={(e)=>setFracture(e.target.value)} defaultValue={mineral.fracture}></input><br/>
+            <input type="text" className="form-control" onChange={(e)=>setHabit(e.target.value)} defaultValue={mineral.habit}></input><br/>
+            <input type="text" className="form-control" onChange={(e)=>setHardness(e.target.value)} defaultValue={mineral.hardness}></input><br/>
+            <input type="text" className="form-control" onChange={(e)=>setLuster(e.target.value)} defaultValue={mineral.luster}></input><br/>
+            <input type="text" className="form-control" onChange={(e)=>setOp(e.target.value)} defaultValue={mineral.op}></input><br/>
+            <input type="text" className="form-control" onChange={(e)=>setSg(e.target.value)} defaultValue={mineral.sg}></input><br/>
+            <input type="text" className="form-control" onChange={(e)=>setStreak(e.target.value)} defaultValue={mineral.streak}></input><br/>
+            <input type="text" className="form-control" onChange={(e)=>setGroup(e.target.value)} defaultValue={mineral.group}></input><br/>
+            <input type="text" className="form-control" onChange={(e)=>setTransparency(e.target.value)} defaultValue={mineral.transparency}></input><br/>
+            <textarea type="text" className="form-control" onChange={(e)=>setDescription(e.target.value)} defaultValue={mineral.description}></textarea><br/>
             <h3>Select Image</h3><br/>
-            <input type="file" className="form-control" onSubmit={(e)=>setFile(e.target.files[0])} defaultValue={mineral.image_path}></input><br/>
+            <input type="file" className="form-control" onChange={(e)=>setFile(e.target.files[0])} defaultValue={mineral.image_path}></input><br/>
             <img src={"http://127.0.0.1:8000/"+mineral.image_path} className="imgSize" alt="pic"></img><br/>
             <><button className="btn btn-secondary" onClick={addUpdate}>Update Mineral</button><br/></>
-            </form>
         </div>
     </>
   );

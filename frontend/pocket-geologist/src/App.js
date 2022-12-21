@@ -19,7 +19,6 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        {/* <Header /> */}
         <Routes>
           <Route path='/add' element={<Protected Cmp={AddMineral} />} />
           <Route path='/update' element={<Protected Cmp={UpdateMineral} />} />

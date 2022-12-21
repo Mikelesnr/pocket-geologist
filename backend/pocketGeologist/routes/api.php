@@ -38,3 +38,5 @@ Route::post('updateMineral', [HandSampleController::class, 'updateMineral']);
 Route::get('search/{key}', [HandSampleController::class, 'search']);
 
 Route::get('displayGroup/{groupName}', [HandSampleController::class, 'displayGroup']);
+
+Route::get('/user', [\App\Http\Controllers\UserController::class, 'user']);
