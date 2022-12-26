@@ -26,23 +26,35 @@ function Header() {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto navbar-wrapper">
-                            <Nav.Link>
-                                <Link to="/">Home</Link>
-                            </Nav.Link>
+                            {
+                                localStorage.getItem('user-info') ?
+                                    <>
+                                        <Nav.Link>
+                                            <Link to="/">Home</Link>
+                                        </Nav.Link>
+                                    </> :
+                                    <></>
+                            }
                             <Nav.Link>
                                 <Link to="/all">All Minerals</Link>
                             </Nav.Link>
-                            <Nav.Link>
-                                <Link to="/info">Information</Link>
-                            </Nav.Link>
-                            <Nav.Link>
-                                <Link to="/contact">Contact Us</Link>
-                            </Nav.Link>
-                            <NavDropdown title="Search">
-                                <NavDropdown.Item><Link to="/searchK">Keyword Search</Link></NavDropdown.Item>
-                                <NavDropdown.Item><Link to="/searchP">Property Search</Link></NavDropdown.Item>
-                                <NavDropdown.Item><Link to="/weather">Weather Search</Link></NavDropdown.Item>
-                            </NavDropdown>
+                            {
+                                localStorage.getItem('user-info') ?
+                                    <>
+                                        <Nav.Link>
+                                            <Link to="/info">Information</Link>
+                                        </Nav.Link>
+                                        <Nav.Link>
+                                            <Link to="/contact">Contact Us</Link>
+                                        </Nav.Link>
+                                        <NavDropdown title="Search">
+                                            <NavDropdown.Item><Link to="/searchK">Keyword Search</Link></NavDropdown.Item>
+                                            <NavDropdown.Item><Link to="/searchP">Property Search</Link></NavDropdown.Item>
+                                            <NavDropdown.Item><Link to="/weather">Weather Search</Link></NavDropdown.Item>
+                                        </NavDropdown>
+                                    </> :
+                                    <></>
+                            }
                             {
                                 localStorage.getItem('user-info') && admin ?
                                     <>
@@ -50,16 +62,6 @@ function Header() {
                                             <NavDropdown.Item><Link to="/add">Add Mineral</Link></NavDropdown.Item>
                                             <NavDropdown.Item><Link to="/delete">Update Delete</Link></NavDropdown.Item>
                                         </NavDropdown>
-                                    </> :
-                                    <>
-                                    </>
-                            }
-                            {
-                                localStorage.getItem('user-info') && !admin ?
-                                    <>
-                                        <Nav.Link>
-                                            <Link to="/all">All Minerals</Link>
-                                        </Nav.Link>
                                     </> :
                                     <>
                                     </>

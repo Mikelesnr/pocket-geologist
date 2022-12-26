@@ -24,13 +24,14 @@ function App() {
         <Routes>
           <Route path='/add' element={<Protected Cmp={AddMineral} />} />
           <Route path='/update' element={<Protected Cmp={UpdateMineral} />} />
+          <Route path='/searchK' element={<Protected Cmp={DisplaySearch} />} />
+          <Route path='/searchP' element={<Protected Cmp={PropertySearch} />} />
+          <Route path='/delete' element={<Protected Cmp={UpdateDelete} />} />
+          <Route path='/displayGroup' element={<Protected Cmp={DisplayGroup} />} />
+          <Route path='/info' element={<Protected Cmp={Info} />} />
+          <Route path='/weather' element={<Protected Cmp={Weather} />} />
           <Route path='/' element={<Home />} />
           <Route path='/all' element={<Display />} />
-          <Route path='/searchK' element={<DisplaySearch />} />
-          <Route path='/searchP' element={<PropertySearch />} />
-          <Route path='/displayGroup' element={<DisplayGroup />} />
-          <Route path='/delete' element={<UpdateDelete />} />
-          <Route path='/info' element={<Info />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />

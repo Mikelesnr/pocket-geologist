@@ -85,6 +85,7 @@ class HandSampleController extends Controller
         $data = [];
         $name = HandSample::where('mineral', 'Like', "%$key%")->get();
         $group = HandSample::where('group', 'Like', "%$key%")->get();
+        $color = HandSample::where('color', 'Like', "%$key%")->get();
         for ($i = 0; $i < count($name); $i++) {
             array_push($data, $name[$i]);
         }
@@ -93,6 +94,13 @@ class HandSampleController extends Controller
                 continue;
             } else {
                 array_push($data, $group[$i]);
+            }
+        }
+        for ($i = 0; $i < count($color); $i++) {
+            if (in_array($color[$i], $data)) {
+                continue;
+            } else {
+                array_push($data, $color[$i]);
             }
         }
         return $data;
@@ -111,15 +119,15 @@ class HandSampleController extends Controller
         $data = [];
         for ($i = 0; $i < count($allMinerals); $i++) {
             //conditions
-            $color = $allMinerals[$i]->color == $req->input('color');
-            $streak = $allMinerals[$i]->streak == $req->input('streak');
-            $luster = $allMinerals[$i]->luster == $req->input('luster');
-            $habit = $allMinerals[$i]->habit == $req->input('habit');
-            $hardness = $allMinerals[$i]->hardness == $req->input('hardness');
-            $op = $allMinerals[$i]->op == $req->input('op');
-            $sg = $allMinerals[$i]->sg == $req->input('sg');
-            $transparency = $allMinerals[$i]->transparency == $req->input('transparency');
-            $fracture = $allMinerals[$i]->fracture == $req->input('fracture');
+            $color = str_contains($allMinerals[$i]->color, $req->input('color'));
+            $streak = str_contains($allMinerals[$i]->streak, $req->input('streak'));
+            $luster = str_contains($allMinerals[$i]->luster, $req->input('luster'));
+            $habit = str_contains($allMinerals[$i]->habit, $req->input('habit'));
+            $hardness = str_contains($allMinerals[$i]->hardness, $req->input('hardness'));
+            $op = str_contains($allMinerals[$i]->op, $req->input('op'));
+            $sg = str_contains($allMinerals[$i]->sg, $req->input('sg'));
+            $transparency = str_contains($allMinerals[$i]->transparency, $req->input('transparency'));
+            $fracture = str_contains($allMinerals[$i]->fracture, $req->input('fracture'));
             //conditional logic
             if ($color and $streak and $luster and $habit and $hardness and $transparency and $op and $sg and $fracture) {
                 array_push($data, $allMinerals[$i]);
