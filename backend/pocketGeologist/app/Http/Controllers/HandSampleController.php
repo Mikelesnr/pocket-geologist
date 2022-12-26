@@ -104,4 +104,27 @@ class HandSampleController extends Controller
         $group = HandSample::where('group', 'Like', "%$groupName%")->get();
         return $group;
     }
+
+    function propertySearch(Request $req)
+    {
+        $allMinerals = HandSample::all();
+        $data = [];
+        for ($i = 0; $i < count($allMinerals); $i++) {
+            //conditions
+            $color = $allMinerals[$i]->color == $req->input('color');
+            $streak = $allMinerals[$i]->streak == $req->input('streak');
+            $luster = $allMinerals[$i]->luster == $req->input('luster');
+            $habit = $allMinerals[$i]->habit == $req->input('habit');
+            $hardness = $allMinerals[$i]->hardness == $req->input('hardness');
+            $op = $allMinerals[$i]->op == $req->input('op');
+            $sg = $allMinerals[$i]->sg == $req->input('sg');
+            $transparency = $allMinerals[$i]->transparency == $req->input('transparency');
+            $fracture = $allMinerals[$i]->fracture == $req->input('fracture');
+            //conditional logic
+            if ($color and $streak and $luster and $habit and $hardness and $transparency and $op and $sg and $fracture) {
+                array_push($data, $allMinerals[$i]);
+            }
+        }
+        return $data;
+    }
 }

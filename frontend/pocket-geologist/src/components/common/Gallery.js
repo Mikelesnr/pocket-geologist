@@ -1,14 +1,14 @@
 import Header from "./Header"
-// import Weather from "./Weather"
+import Weather from "./Weather"
 
 function Gallery() {
     return (
         <>
         <Header/>
         <div className="pdng-top">
-            {/* <div>
+            <div>
                 <Weather/>
-            </div> */}
+            </div>
             <div className=" album py-5 bg-light">
         <h2>Gallery</h2>
         <div className="container">
@@ -16,7 +16,7 @@ function Gallery() {
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div className="col">
                     <div className="card shadow-sm">
-                        <img loading="lazy" src="images/obsidian2.jpg" alt="obsidian"/>
+                        <img loading="lazy" src="http://localhost:8000/images/3mYVfzt2qSjCXRLDapf2kWkBC2rKtSF6Ol5lOw39.jpg" alt="obsidian"/>
 
                         <div className="card-body">
                             <p className="card-text">This is a type of volcanic glass. It is none crystalline due to rapid
@@ -30,7 +30,7 @@ function Gallery() {
                 </div>
                 <div className="col">
                     <div className="card shadow-sm">
-                        <img loading="lazy" src="images/amethyst(1).jpg" alt="amethyst"/>
+                        <img loading="lazy" src="http://localhost:8000/images/iCdYNPYRcrqAlMU6REzJicu4SonSiESvaYCQYJcO.jpg" alt="amethyst"/>
 
                         <div className="card-body">
                             <p className="card-text">Amethyst is a purple variety of quartz. Quartz is normally clear, but
@@ -44,7 +44,7 @@ function Gallery() {
                 </div>
                 <div className="col">
                     <div className="card shadow-sm">
-                        <img loading="lazy" src="images/quartz.jpg" alt="quartz"/>
+                        <img loading="lazy" src="http://localhost:8000/images/zt0IXuCrNKjci9FcfAHHqPXjYnGPkOT3zkzZWkVR.jpg" alt="quartz"/>
 
                         <div className="card-body">
                             <p className="card-text">Quartz is the most abundant minerals on the earth’s surface. The
@@ -59,7 +59,7 @@ function Gallery() {
 
                 <div className="col">
                     <div className="card shadow-sm">
-                        <img loading="lazy" src="images/feldspar2.jpg" alt="feldspar"/>
+                        <img loading="lazy" src="http://localhost:8000/images/3G9eKG31gdQrulZCiRx0halbYT1hV6qvD3YjuZwc.jpg" alt="feldspar"/>
 
                         <div className="card-body">
                             <p className="card-text">Feldspars are a group of rock-forming aluminium tectosilicate minerals.
@@ -73,7 +73,7 @@ function Gallery() {
                 </div>
                 <div className="col">
                     <div className="card shadow-sm">
-                        <img loading="lazy" src="images/biotite2.jpg" alt="biotite"/>
+                        <img loading="lazy" src="http://localhost:8000/images/qvl3SMO9TWOIFAsIvCMhRCIdWmR272IYcBCKQecf.jpg" alt="biotite"/>
 
                         <div className="card-body">
                             <p className="card-text">Biotite is a dark mineral from the mica group. It is commonly found in
@@ -87,7 +87,7 @@ function Gallery() {
                 </div>
                 <div className="col">
                     <div className="card shadow-sm">
-                        <img loading="lazy" src="images/galena2.jpg" alt="galena"/>
+                        <img loading="lazy" src="http://localhost:8000/images/YTxgWSAQbVdL0DIiufqPYBjzflR2DO8LE6ZXpDsv.jpg" alt="galena"/>
 
                         <div className="card-body">
                             <p className="card-text">This is a lead sulfide mineral. It is a relatively heavy mineral which
@@ -102,7 +102,7 @@ function Gallery() {
 
                 <div className="col">
                     <div className="card shadow-sm">
-                        <img loading="lazy" src="images/sandstone2.jpg" alt="sandstone"/>
+                        <img loading="lazy" src="http://localhost:8000/images/1n9Z28jvW6euUlDd1KqjRnvi29cn21vTMrCndzs1.jpg" alt="sandstone"/>
 
                         <div className="card-body">
                             <p className="card-text">Sandstone is a clastic sedimentary rock primarily composed of quartz
@@ -116,7 +116,7 @@ function Gallery() {
                 </div>
                 <div className="col">
                     <div className="card shadow-sm">
-                        <img loading="lazy" src="images/marble(2).jpg" alt="marble"/>
+                        <img loading="lazy" src="http://localhost:8000/images/JYWQBynEymIuHljzfy1X4BsbQqQnNsJUvmkT7iun.jpg" alt="marble"/>
 
                         <div className="card-body">
                             <p className="card-text">Marble is a metamorphic rock formed from exposing limestone to high
@@ -130,7 +130,7 @@ function Gallery() {
                 </div>
                 <div className="col">
                     <div className="card shadow-sm">
-                        <img loading="lazy" src="images/gneiss2.jpg" alt="gneiss"/>
+                        <img loading="lazy" src="http://localhost:8000/images/2t5qy6r87Og8c5It0Vf83XJhkfz3L3EoD6MOa0F0.jpg" alt="gneiss"/>
 
                         <div className="card-body">
                             <p className="card-text">Gneiss is a high-grade metamorphic rock formed from high-grade <a
