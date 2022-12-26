@@ -41,6 +41,7 @@ function Header() {
                             <NavDropdown title="Search">
                                 <NavDropdown.Item><Link to="/searchK">Keyword Search</Link></NavDropdown.Item>
                                 <NavDropdown.Item><Link to="/searchP">Property Search</Link></NavDropdown.Item>
+                                <NavDropdown.Item><Link to="/weather">Weather Search</Link></NavDropdown.Item>
                             </NavDropdown>
                             {
                                 localStorage.getItem('user-info') && admin ?

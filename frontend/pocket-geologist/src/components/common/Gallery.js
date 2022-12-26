@@ -1,15 +1,9 @@
-import Header from "./Header"
-import Weather from "./Weather"
-
 function Gallery() {
     return (
         <>
-        <Header/>
         <div className="pdng-top">
-            <div>
-                <Weather/>
-            </div>
-            <div className=" album py-5 bg-light">
+            
+        <div className=" album py-5 bg-secondary">
         <h2>Gallery</h2>
         <div className="container">
 

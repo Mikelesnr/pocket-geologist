@@ -39,15 +39,15 @@ function PropertySearch() {
         <Header/>
         <div className="col-sm-6 offset-sm-3 pdng-top">
             <h1>Property Search</h1>
-            <input type="text" className="form-control" onChange={(e)=>setColor(e.target.value)} placeholder="color"></input><br/>
-            <input type="text" className="form-control" onChange={(e)=>setFracture(e.target.value)} placeholder="facture"></input><br/>
-            <input type="text" className="form-control" onChange={(e)=>setHabit(e.target.value)} placeholder="habit"></input><br/>
-            <input type="text" className="form-control" onChange={(e)=>setHardness(e.target.value)} placeholder="hardness"></input><br/>
-            <input type="text" className="form-control" onChange={(e)=>setLuster(e.target.value)} placeholder="luster"></input><br/>
-            <input type="text" className="form-control" onChange={(e)=>setOp(e.target.value)} placeholder="optical properties"></input><br/>
-            <input type="text" className="form-control" onChange={(e)=>setSg(e.target.value)} placeholder="specific gravity"></input><br/>
-            <input type="text" className="form-control" onChange={(e)=>setStreak(e.target.value)} placeholder="streak"></input><br/>
-            <input type="text" className="form-control" onChange={(e)=>setTransparency(e.target.value)} placeholder="transparency"></input><br/>
+            <input type="text" className="form-control" onChange={(e)=>setColor(e.target.value)} placeholder="color (example:pink)"></input><br/>
+            <input type="text" className="form-control" onChange={(e)=>setFracture(e.target.value)} placeholder="facture (example:concoidal)"></input><br/>
+            <input type="text" className="form-control" onChange={(e)=>setHabit(e.target.value)} placeholder="habit (example:prismatic)"></input><br/>
+            <input type="text" className="form-control" onChange={(e)=>setHardness(e.target.value)} placeholder="hardness (example:7-8)"></input><br/>
+            <input type="text" className="form-control" onChange={(e)=>setLuster(e.target.value)} placeholder="luster (example:vitreous)"></input><br/>
+            <input type="text" className="form-control" onChange={(e)=>setOp(e.target.value)} placeholder="optical properties (example:none)"></input><br/>
+            <input type="text" className="form-control" onChange={(e)=>setSg(e.target.value)} placeholder="specific gravity (example:medium)"></input><br/>
+            <input type="text" className="form-control" onChange={(e)=>setStreak(e.target.value)} placeholder="streak (example:colorless)"></input><br/>
+            <input type="text" className="form-control" onChange={(e)=>setTransparency(e.target.value)} placeholder="transparency (example:translucent)"></input><br/>
             <><button className="btn btn-secondary" onClick={propertySearch}>Search</button><br/></>
         </div>
         <div className='col-sm-8 offset-sm-2 pdng-top'>
@@ -81,7 +81,10 @@ function PropertySearch() {
                             </td>
                         </tr>    
                     ):
-                    <></>
+                    <>
+                    <br/>
+                    <h1 classname="text-center">Mineral not in out database yet</h1>
+                    </>
                 }
             </tbody>            
         </Table>
