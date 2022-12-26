@@ -139,6 +139,10 @@ footer{
   background-color: aqua !important;
 }
 
+.btn-home{
+  width: 100px;
+}
+
 .footer {
     width: 100%;
     height: 60px;
@@ -154,4 +158,33 @@ footer{
 
   .mb{
     margin-bottom: 80px !important;
+  }
+
+  .landing-view{
+    height: 500px;
+    color :aqua;
+    background-image: url("http://localhost:8000/images/84Oq5KLjPVlvXPv0i3NISixQWfjLDPNzh7alnbwr.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.1);
+  }
+  
+  .landing-view:hover{
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4);
+  }
+
+  .inner-landing{
+    margin-top: auto !important;
+    margin-right: auto;
+    color:rgb(220, 228, 228) !important;
+  }
+
+  .inner-landing-h2{
+    margin-right: auto;
+    margin-top: 200 px !important;
+    color:rgb(220, 228, 228) !important;
+  }
+  .text-div{
+    margin-top: 150px !important;
   }

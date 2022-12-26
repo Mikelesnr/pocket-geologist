@@ -6,7 +6,7 @@ function Header() {
 
     function Logout() {
         localStorage.clear();
-        navigate("/login")
+        navigate("/")
     }
 
     let user = JSON.parse(localStorage.getItem('user-info'));
@@ -84,7 +84,7 @@ function Header() {
                                             <Link to="/login">login</Link>
                                         </Nav.Link>
                                         <Nav.Link>
-                                            <Link to="/register">Register</Link>
+                                            <Link to="/register">Signup</Link>
                                         </Nav.Link>
                                     </>
                             }

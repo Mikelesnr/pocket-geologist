@@ -18,7 +18,13 @@ function DisplaySearch() {
 
     return (
         <>
-        <Header/>
+        {
+                localStorage.getItem('user-info') ?
+                    <>
+                    <Header/>
+                    </> :
+                    <></>
+            }
         <div className="col-sm-6 offset-sm-3 pdng-top">
             <h1>Search Mineral</h1>
             <br/>
