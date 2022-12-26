@@ -14,6 +14,7 @@ import UpdateMineral from './components/pages/UpdateMineral';
 import Protected from './components/Protected';
 import DisplaySearch from 'components/pages/DisplaySearch';
 import DisplayGroup from 'components/pages/DisplayGroup';
+import PropertySearch from 'components/pages/PropertySearch';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path='/' element={<Gallery />} />
           <Route path='/all' element={<Display />} />
           <Route path='/searchK' element={<DisplaySearch />} />
+          <Route path='/searchP' element={<PropertySearch />} />
           <Route path='/displayGroup' element={<DisplayGroup />} />
           <Route path='/delete' element={<UpdateDelete />} />
           <Route path='/info' element={<Info />} />
