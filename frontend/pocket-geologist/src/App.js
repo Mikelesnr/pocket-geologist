@@ -16,6 +16,7 @@ import DisplaySearch from 'components/pages/DisplaySearch';
 import DisplayGroup from 'components/pages/DisplayGroup';
 import PropertySearch from 'components/pages/PropertySearch';
 import Weather from 'components/pages/Weather';
+import DisplayTest from 'components/pages/DisplayTest';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path='/searchP' element={<Protected Cmp={PropertySearch} />} />
           <Route path='/delete' element={<Protected Cmp={UpdateDelete} />} />
           <Route path='/displayGroup' element={<Protected Cmp={DisplayGroup} />} />
+          <Route path='/displaytest' element={<Protected Cmp={DisplayTest} />} />
           <Route path='/info' element={<Protected Cmp={Info} />} />
           <Route path='/weather' element={<Protected Cmp={Weather} />} />
           <Route path='/' element={<Home />} />

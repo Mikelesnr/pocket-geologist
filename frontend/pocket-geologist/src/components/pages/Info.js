@@ -1,7 +1,20 @@
 import Header from "../common/Header";
-import Table from "react-bootstrap/Table"
+import React,{useState,useEffect} from "react";
+import axios from "axios";
+import {Link} from "react-router-dom";
 
 function Info() {
+
+    const[tests,setTests] = useState([]);
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    const fetchData = async () => {
+        const {data} = await axios.get(`http://localhost:8000/api/displayTests`);
+        setTests(data);
+    }
     
     return (
         <>
@@ -9,15 +22,21 @@ function Info() {
         <div className="pdng-top mb">
             <h1>Information Page</h1>
             <h2>Mineral Tests</h2>
+        {
+            tests.map((test)=>
+        <div className="pdng-top mb">
+            <h3><Link className="group-hover" to={"/displayTest/?title="+test.title}>{test.title} Test</Link></h3>
         <div className="container">
-            <h3>streak test</h3>
             <br/>
-            <img className="mb" src="http://localhost:8000/images/xVW15pZKmuWy5AEPJoK9IwNwyqbVDhWUCRtWT9xj.jpg" alt="streak test"></img>
+            <img className=" info-img mb" src={`http://localhost:8000/${test.image_path}`} alt="streak test"></img>
             <br/>
-            <p className="col-sm-6 offset-3 text-light">
-                
-            </p>
+            <Link className=" text-light text-decoration-none" to={"/displayTest/?title="+test.title}>
+                <div className="col-sm-6 offset-3 text-light trunc" dangerouslySetInnerHTML={{ __html: test.description }} />
+            </Link>
         </div>
+        </div>
+        )
+        }
         </div>
         </>
     )

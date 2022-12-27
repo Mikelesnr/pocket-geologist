@@ -5,7 +5,7 @@ import axios from "axios";
 
 function UpdateMineral() {
   const [search]=useSearchParams();
-    const checkValue = search.get('name');
+  const checkValue = search.get('name');
 
     const [mineral,setMineral]=useState("");
     const [id,setId] = useState("");
