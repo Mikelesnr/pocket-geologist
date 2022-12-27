@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HandSampleController;
-use App\Http\Controllers\Weather;
+use App\Http\Controllers\TestController;
 use App\Models\HandSample;
 
 /*
@@ -43,3 +43,7 @@ Route::get('displayGroup/{groupName}', [HandSampleController::class, 'displayGro
 Route::get('weather/{city}', [UserController::class, 'weather']);
 
 Route::get('propertySearch', [HandSampleController::class, 'propertySearch']);
+
+Route::get('displayTests', [TestController::class, 'displayTests']);
+
+Route::get('displayTest/{title}', [TestController::class, 'displayTest']);

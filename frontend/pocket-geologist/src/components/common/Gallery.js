@@ -3,7 +3,7 @@ function Gallery() {
         <>
         <div className="pdng-top">
             
-        <div className=" album py-5 bg-secondary">
+        <div className=" album py-5 bg-secondary col-sm-10 offset-1">
         <h2>Gallery</h2>
         <div className="container">
 
@@ -89,51 +89,6 @@ function Gallery() {
                             <div className="d-flex justify-content-between align-items-center">
                                 <small className="text-muted"><a href="https://www.mindat.org/min-1641.html" target="_blank"
                                         rel="noopener noreferrer">galena</a></small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="col">
-                    <div className="card shadow-sm">
-                        <img loading="lazy" src="http://localhost:8000/images/1n9Z28jvW6euUlDd1KqjRnvi29cn21vTMrCndzs1.jpg" alt="sandstone"/>
-
-                        <div className="card-body">
-                            <p className="card-text">Sandstone is a clastic sedimentary rock primarily composed of quartz
-                                and other silicate minerals such as feldspar.</p>
-                            <div className="d-flex justify-content-between align-items-center">
-                                <small className="text-muted"><a href="https://www.mindat.org/min-49438.html"
-                                        target="_blank" rel="noopener noreferrer">sandstone</a></small>
-                            </div>
-                        </div>
-                    </div>Name
-                </div>
-                <div className="col">
-                    <div className="card shadow-sm">
-                        <img loading="lazy" src="http://localhost:8000/images/JYWQBynEymIuHljzfy1X4BsbQqQnNsJUvmkT7iun.jpg" alt="marble"/>
-
-                        <div className="card-body">
-                            <p className="card-text">Marble is a metamorphic rock formed from exposing limestone to high
-                                temperature and pressure.</p>
-                            <div className="d-flex justify-content-between align-items-center">
-                                <small className="text-muted"><a href="https://www.mindat.org/min-9507.html" target="_blank"
-                                        rel="noopener noreferrer">marble</a></small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="card shadow-sm">
-                        <img loading="lazy" src="http://localhost:8000/images/2t5qy6r87Og8c5It0Vf83XJhkfz3L3EoD6MOa0F0.jpg" alt="gneiss"/>
-
-                        <div className="card-body">
-                            <p className="card-text">Gneiss is a high-grade metamorphic rock formed from high-grade <a
-                                    href="https://www.mindat.org/glossary/metamorphism" target="_blank"
-                                    rel="noopener noreferrer">metamorphism</a> of
-                                granite or sedimentary rock.</p>
-                            <div className="d-flex justify-content-between align-items-center">
-                                <small className="text-muted"><a href="https://www.mindat.org/min-48629.html"
-                                        target="_blank" rel="noopener noreferrer">gneiss</a></small>
                             </div>
                         </div>
                     </div>

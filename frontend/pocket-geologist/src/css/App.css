@@ -91,6 +91,7 @@ footer{
 .brand-link:hover{
   color: black;
 }
+
 .dropdown-item,.dropdown-menu{
   background-color: #5e5c5b !important;
   margin: 0px !important;
@@ -176,7 +177,7 @@ footer{
 
   .inner-landing{
     margin-top: auto !important;
-    margin-right: auto;
+    margin-bottom: auto !important;
     color:rgb(220, 228, 228) !important;
   }
 
@@ -187,4 +188,9 @@ footer{
   }
   .text-div{
     margin-top: 150px !important;
+  }
+
+  .jstfy{
+    margin-left: auto;
+    margin-right: auto;
   }
