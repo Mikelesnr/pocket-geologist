@@ -42,7 +42,7 @@ function Login() {
         <>
         <Header/>
         <div className="col-sm-6 offset-sm-3 pdng-top">
-            <h1>Login Page</h1>
+            <h1>Login</h1>
             <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} className="form-control" placeholder="email"/>
             <br></br>
             <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} className="form-control" placeholder="password"/>

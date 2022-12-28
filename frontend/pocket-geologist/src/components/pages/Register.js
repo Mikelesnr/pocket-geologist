@@ -37,7 +37,7 @@ function Register() {
         <>
         <Header/>
         <div className="col-sm-6 offset-sm-3 pdng-top">
-            <h1>Register Page</h1>
+            <h1>Signup</h1>
             <input type="text" value={name} onChange={(e)=>setName(e.target.value)} className="form-control" placeholder="name"/>
             <br></br>
             <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} className="form-control" placeholder="email"/>

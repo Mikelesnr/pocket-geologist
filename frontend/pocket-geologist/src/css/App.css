@@ -200,6 +200,10 @@ footer{
     overflow: hidden;
   }
 
+  .trunc:hover{
+    color: black !important;
+  }
+
   .info-img{
     max-height: 300px !important;
     margin-left: auto;

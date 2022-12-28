@@ -11,20 +11,20 @@ class HandSampleController extends Controller
     function addMineral(Request $req)
     {
         $handSample = new HandSample;
-        // $handSample->mineral = $req->input('name');
-        // $handSample->color = $req->input('color');
-        // $handSample->streak = $req->input('streak');
-        // $handSample->luster = $req->input('luster');
-        // $handSample->hardness = $req->input('hardness');
-        // $handSample->transparency = $req->input('transparency');
-        // $handSample->op = $req->input('op');
-        // $handSample->sg = $req->input('sg');
-        // $handSample->group = $req->input('group');
-        // $handSample->fracture = $req->input('fracture');
-        // $handSample->habit = $req->input('habit');
-        // $handSample->description = $req->input('description');
+        $handSample->mineral = $req->input('name');
+        $handSample->color = $req->input('color');
+        $handSample->streak = $req->input('streak');
+        $handSample->luster = $req->input('luster');
+        $handSample->hardness = $req->input('hardness');
+        $handSample->transparency = $req->input('transparency');
+        $handSample->op = $req->input('op');
+        $handSample->sg = $req->input('sg');
+        $handSample->group = $req->input('group');
+        $handSample->fracture = $req->input('fracture');
+        $handSample->habit = $req->input('habit');
+        $handSample->description = $req->input('description');
         $handSample->image_path = $req->file('file')->store('images');
-        // $handSample->save();
+        $handSample->save();
         return $handSample;
     }
 
@@ -128,8 +128,11 @@ class HandSampleController extends Controller
             $sg = str_contains($allMinerals[$i]->sg, $req->input('sg'));
             $transparency = str_contains($allMinerals[$i]->transparency, $req->input('transparency'));
             $fracture = str_contains($allMinerals[$i]->fracture, $req->input('fracture'));
+            $condition = [$color, $streak, $luster, $habit, $hardness, $transparency, $op, $sg, $fracture];
+            //$bol only true if all conditions match
+            $bol = !in_array(false, $condition);
             //conditional logic
-            if ($color and $streak and $luster and $habit and $hardness and $transparency and $op and $sg and $fracture) {
+            if ($bol) {
                 array_push($data, $allMinerals[$i]);
             }
         }

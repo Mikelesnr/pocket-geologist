@@ -3,6 +3,7 @@ import Gallery from "components/common/Gallery";
 import { Link } from "react-router-dom"
 import Header from "components/common/Header";
 import DisplaySearch from "./DisplaySearch";
+import Weather from "./Weather";
 
 function Home() {
 
@@ -48,6 +49,12 @@ function Home() {
                 <DisplaySearch />
             </div>
             <Gallery />
+            {
+                                localStorage.getItem('user-info') ?
+                                    <>
+                                    <Weather />
+                                    </> :
+                                    <>
             <div className="container d-flex justify-content-center text-center jstfy">
                 <Table className="col-sm-8 offset-2 align-self-center jstfy">
                     <tr>
@@ -70,6 +77,8 @@ function Home() {
                     </tr>
                 </Table>
             </div>
+            </>
+            }
 
         </div>
 
