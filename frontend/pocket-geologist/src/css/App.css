@@ -196,7 +196,7 @@ footer{
   }
 
   .trunc{
-    max-height: 100px;
+    max-height: 150px;
     overflow: hidden;
   }
 
@@ -226,5 +226,6 @@ footer{
       display: inline-block !important;
       margin-left: auto !important;
       margin-right: auto !important;
+      max-height: 100px;
     }
   }
