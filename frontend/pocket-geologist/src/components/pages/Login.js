@@ -17,7 +17,7 @@ function Login() {
     async function signin(){
         let item = {email,password};
 
-        //Fetching user registration api
+        //Fetching user login api
         let result = await fetch("http://localhost:8000/api/login",{
             method:"POST",
             body:JSON.stringify(item),
