@@ -7,31 +7,14 @@ use App\Models\HandSample;
 
 class HandSampleController extends Controller
 {
-    //Adds mineral to database
-    function addMineral(Request $req)
+    //Adds mineral or updates mineral in database
+    function editMineral(Request $req)
     {
-        $handSample = new HandSample;
-        // $handSample->mineral = $req->input('name');
-        // $handSample->color = $req->input('color');
-        // $handSample->streak = $req->input('streak');
-        // $handSample->luster = $req->input('luster');
-        // $handSample->hardness = $req->input('hardness');
-        // $handSample->transparency = $req->input('transparency');
-        // $handSample->op = $req->input('op');
-        // $handSample->sg = $req->input('sg');
-        // $handSample->group = $req->input('group');
-        // $handSample->fracture = $req->input('fracture');
-        // $handSample->habit = $req->input('habit');
-        // $handSample->description = $req->input('description');
-        $handSample->image_path = $req->file('file')->store('images');
-        // $handSample->save();
-        return $handSample;
-    }
-
-    //Updates mineral in database
-    function updateMineral(Request $req)
-    {
-        $handSample = HandSample::find($req->input('id'));
+        if ($req->input('id')) {
+            $handSample = HandSample::find($req->input('id'));
+        } else {
+            $handSample = new HandSample;
+        }
         $handSample->mineral = $req->input('name');
         $handSample->color = $req->input('color');
         $handSample->streak = $req->input('streak');
@@ -44,7 +27,9 @@ class HandSampleController extends Controller
         $handSample->fracture = $req->input('fracture');
         $handSample->habit = $req->input('habit');
         $handSample->description = $req->input('description');
-        $handSample->image_path = $req->file('file')->store('images');
+        if ($req->file) {
+            $handSample->image_path = $req->file('file')->store('images');
+        }
         $handSample->save();
         return $handSample;
     }

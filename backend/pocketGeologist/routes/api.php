@@ -26,7 +26,7 @@ Route::post('register', [UserController::class, 'register']);
 
 Route::post('login', [UserController::class, 'login']);
 
-Route::post('addMineral', [HandSampleController::class, 'addMineral']);
+Route::post('addMineral', [HandSampleController::class, 'editMineral']);
 
 Route::get('displayAll', [HandSampleController::class, 'displayAll']);
 
@@ -34,7 +34,7 @@ Route::delete('delete/{name}', [HandSampleController::class, 'delete']);
 
 Route::get('displayOne/{name}', [HandSampleController::class, 'displayOne']);
 
-Route::post('updateMineral', [HandSampleController::class, 'updateMineral']);
+Route::post('updateMineral', [HandSampleController::class, 'editMineral']);
 
 Route::get('search/{key}', [HandSampleController::class, 'search']);
 
