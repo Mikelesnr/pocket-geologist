@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/pocket-geologist-frontend/static/css/main.0408a225.css",
-    "main.js": "/pocket-geologist-frontend/static/js/main.d0e056c9.js",
-    "static/js/787.319bc6db.chunk.js": "/pocket-geologist-frontend/static/js/787.319bc6db.chunk.js",
-    "index.html": "/pocket-geologist-frontend/index.html",
-    "main.0408a225.css.map": "/pocket-geologist-frontend/static/css/main.0408a225.css.map",
-    "main.d0e056c9.js.map": "/pocket-geologist-frontend/static/js/main.d0e056c9.js.map",
-    "787.319bc6db.chunk.js.map": "/pocket-geologist-frontend/static/js/787.319bc6db.chunk.js.map"
+    "main.css": "/pocket-geologist/static/css/main.0408a225.css",
+    "main.js": "/pocket-geologist/static/js/main.27163084.js",
+    "static/js/787.319bc6db.chunk.js": "/pocket-geologist/static/js/787.319bc6db.chunk.js",
+    "index.html": "/pocket-geologist/index.html",
+    "main.0408a225.css.map": "/pocket-geologist/static/css/main.0408a225.css.map",
+    "main.27163084.js.map": "/pocket-geologist/static/js/main.27163084.js.map",
+    "787.319bc6db.chunk.js.map": "/pocket-geologist/static/js/787.319bc6db.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0408a225.css",
-    "static/js/main.d0e056c9.js"
+    "static/js/main.27163084.js"
   ]
 }
