@@ -17,7 +17,7 @@ function DisplayGroup() {
 
 
     const fetchData = async () => {
-        const { data } = await axios.get("http://localhost:8000/api/displayGroup/"+checkValue);
+        const { data } = await axios.get("http://178.128.137.135/api/displayGroup/"+checkValue);
         setMinerals(data);
     }
 
@@ -47,7 +47,7 @@ function DisplayGroup() {
                             </td>
                             <td className='hide'><p>{mineral.description}</p></td>
                             <td>
-                                <img className='min-pic' src={"http://localhost:8000/"+mineral.image_path} alt="Mineral pic"/>
+                                <img className='min-pic' src={"http://178.128.137.135/"+mineral.image_path} alt="Mineral pic"/>
                                 <h4 className='hideBig'>Name: {mineral.mineral}</h4>
                                 <h5 className='hideBig'>
                                     Group: <Link className="group-hover" to={"/displayGroup/?group="+mineral.group}>{mineral.group}</Link>

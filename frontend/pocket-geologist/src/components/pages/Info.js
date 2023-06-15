@@ -12,7 +12,7 @@ function Info() {
     }, []);
 
     const fetchData = async () => {
-        const {data} = await axios.get(`http://localhost:8000/api/displayTests`);
+        const {data} = await axios.get(`http://178.128.137.135/api/displayTests`);
         setTests(data);
     }
     
@@ -28,7 +28,7 @@ function Info() {
             <h3><Link className="group-hover" to={"/displayTest/?title="+test.title}>{test.title} Test</Link></h3>
         <div className="container">
             <br/>
-            <img className=" info-img mb" src={`http://localhost:8000/${test.image_path}`} alt="streak test"></img>
+            <img className=" info-img mb" src={`http://178.128.137.135/${test.image_path}`} alt="streak test"></img>
             <br/>
             <Link className=" text-light text-decoration-none" to={"/displayTest/?title="+test.title}>
                 <div className="col-sm-6 offset-3 text-light trunc" dangerouslySetInnerHTML={{ __html: test.description }} />
