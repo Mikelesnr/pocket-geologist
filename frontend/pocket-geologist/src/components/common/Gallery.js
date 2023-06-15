@@ -10,7 +10,7 @@ function Gallery() {
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div className="col">
                     <div className="card shadow-sm">
-                        <img loading="lazy" src="http://178.128.137.135/images/3mYVfzt2qSjCXRLDapf2kWkBC2rKtSF6Ol5lOw39.jpg" alt="obsidian"/>
+                        <img loading="lazy" src="http://localhost:8000/images/3mYVfzt2qSjCXRLDapf2kWkBC2rKtSF6Ol5lOw39.jpg" alt="obsidian"/>
 
                         <div className="card-body">
                             <p className="card-text">This is a type of volcanic glass. It is none crystalline due to rapid
@@ -24,7 +24,7 @@ function Gallery() {
                 </div>
                 <div className="col">
                     <div className="card shadow-sm">
-                        <img loading="lazy" src="http://178.128.137.135/images/iCdYNPYRcrqAlMU6REzJicu4SonSiESvaYCQYJcO.jpg" alt="amethyst"/>
+                        <img loading="lazy" src="http://localhost:8000/images/iCdYNPYRcrqAlMU6REzJicu4SonSiESvaYCQYJcO.jpg" alt="amethyst"/>
 
                         <div className="card-body">
                             <p className="card-text">Amethyst is a purple variety of quartz. Quartz is normally clear, but
@@ -38,7 +38,7 @@ function Gallery() {
                 </div>
                 <div className="col">
                     <div className="card shadow-sm">
-                        <img loading="lazy" src="http://178.128.137.135/images/zt0IXuCrNKjci9FcfAHHqPXjYnGPkOT3zkzZWkVR.jpg" alt="quartz"/>
+                        <img loading="lazy" src="http://localhost:8000/images/zt0IXuCrNKjci9FcfAHHqPXjYnGPkOT3zkzZWkVR.jpg" alt="quartz"/>
 
                         <div className="card-body">
                             <p className="card-text">Quartz is the most abundant minerals on the earth’s surface. The
@@ -53,7 +53,7 @@ function Gallery() {
 
                 <div className="col">
                     <div className="card shadow-sm">
-                        <img loading="lazy" src="http://178.128.137.135/images/3G9eKG31gdQrulZCiRx0halbYT1hV6qvD3YjuZwc.jpg" alt="feldspar"/>
+                        <img loading="lazy" src="http://localhost:8000/images/3G9eKG31gdQrulZCiRx0halbYT1hV6qvD3YjuZwc.jpg" alt="feldspar"/>
 
                         <div className="card-body">
                             <p className="card-text">Feldspars are a group of rock-forming aluminium tectosilicate minerals.
@@ -67,7 +67,7 @@ function Gallery() {
                 </div>
                 <div className="col">
                     <div className="card shadow-sm">
-                        <img loading="lazy" src="http://178.128.137.135/images/qvl3SMO9TWOIFAsIvCMhRCIdWmR272IYcBCKQecf.jpg" alt="biotite"/>
+                        <img loading="lazy" src="http://localhost:8000/images/qvl3SMO9TWOIFAsIvCMhRCIdWmR272IYcBCKQecf.jpg" alt="biotite"/>
 
                         <div className="card-body">
                             <p className="card-text">Biotite is a dark mineral from the mica group. It is commonly found in
@@ -81,7 +81,7 @@ function Gallery() {
                 </div>
                 <div className="col">
                     <div className="card shadow-sm">
-                        <img loading="lazy" src="http://178.128.137.135/images/YTxgWSAQbVdL0DIiufqPYBjzflR2DO8LE6ZXpDsv.jpg" alt="galena"/>
+                        <img loading="lazy" src="http://localhost:8000/images/YTxgWSAQbVdL0DIiufqPYBjzflR2DO8LE6ZXpDsv.jpg" alt="galena"/>
 
                         <div className="card-body">
                             <p className="card-text">This is a lead sulfide mineral. It is a relatively heavy mineral which

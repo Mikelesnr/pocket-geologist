@@ -33,7 +33,7 @@ function AddMineral() {
         formData.append("description",description)
         formData.append("file",file)
         // eslint-disable-next-line no-unused-vars
-        let result = await fetch("http://178.128.137.135/api/addMineral",{
+        let result = await fetch("http://localhost:8000/api/addMineral",{
             method:'POST',
             body:formData,
         });

@@ -30,7 +30,7 @@ function UpdateMineral() {
 
 
     const fetchData = async () => {
-        const { data } = await axios.get("http://178.128.137.135/api/displayOne/"+checkValue);
+        const { data } = await axios.get("http://localhost:8000/api/displayOne/"+checkValue);
         setId(data.id);
         setMineral(data);
         setName(data.mineral);
@@ -67,7 +67,7 @@ function UpdateMineral() {
         formData.append("description",description)
         formData.append("file",file)
         // eslint-disable-next-line no-unused-vars
-        let result = await fetch("http://178.128.137.135/api/updateMineral",{
+        let result = await fetch("http://localhost:8000/api/updateMineral",{
             method:'POST',
             body:formData,
         });
@@ -93,7 +93,7 @@ function UpdateMineral() {
             <textarea type="text" className="form-control" onChange={(e)=>setDescription(e.target.value)} defaultValue={mineral.description}></textarea><br/>
             <h3>Select Image</h3><br/>
             <input type="file" className="form-control" onChange={(e)=>setFile(e.target.files[0])} defaultValue={mineral.image_path}></input><br/>
-            <img src={"http://178.128.137.135/"+mineral.image_path} className="imgSize" alt="pic"></img><br/>
+            <img src={"http://127.0.0.1:8000/"+mineral.image_path} className="imgSize" alt="pic"></img><br/>
             <><button className="btn btn-secondary" onClick={addUpdate}>Update Mineral</button><br/></>
         </div>
     </>

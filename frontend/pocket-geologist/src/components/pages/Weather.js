@@ -16,7 +16,7 @@ function Weather() {
     },[]);
 
     const fetchData = async () => {
-        const { data } = await axios.get(`http://178.128.137.135/api/weather/${city}`);
+        const { data } = await axios.get(`http://localhost:8000/api/weather/${city}`);
         setWeather(data);
     }
     // let myCity=weather.name?weather.name:"Harare";

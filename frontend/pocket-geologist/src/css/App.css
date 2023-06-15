@@ -164,7 +164,7 @@ footer{
   .landing-view{
     height: 500px;
     color :aqua;
-    background-image: url("http://178.128.137.135/images/84Oq5KLjPVlvXPv0i3NISixQWfjLDPNzh7alnbwr.jpg");
+    background-image: url("http://localhost:8000/images/84Oq5KLjPVlvXPv0i3NISixQWfjLDPNzh7alnbwr.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

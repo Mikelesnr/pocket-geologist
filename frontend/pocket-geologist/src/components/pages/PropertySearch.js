@@ -16,7 +16,7 @@ function PropertySearch() {
     const [sg,setSg] = useState("");
     const [streak,setStreak] = useState("");
     const [transparency,setTransparency] = useState("");
-    const query = `http://178.128.137.135/api/propertySearch?
+    const query = `http://localhost:8000/api/propertySearch?
     color=${color}&streak=${streak}&
     luster=${luster}&hardness=${hardness}&
     transparency=${transparency}&
@@ -72,7 +72,7 @@ function PropertySearch() {
                             </td>
                             <td className='hide'><p>{mineral.description}</p></td>
                             <td>
-                                <img className='min-pic' src={"http://178.128.137.135/"+mineral.image_path} alt="Mineral pic"/>
+                                <img className='min-pic' src={"http://localhost:8000/"+mineral.image_path} alt="Mineral pic"/>
                                 <h4 className='hideBig'>Name: {mineral.mineral}</h4>
                                 <h5 className='hideBig'>
                                     Group: <Link className="group-hover" to={"/displayGroup/?group="+mineral.group}>{mineral.group}</Link>
