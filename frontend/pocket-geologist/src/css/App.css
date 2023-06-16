@@ -195,10 +195,35 @@ footer{
     margin-right: auto;
   }
 
+  :root {
+  --lh: 1.4rem;
+}
+
+html {
+  line-height: var(--lh);
+}
+
   .trunc{
-    max-height: 150px;
+    --max-lines: 3;
+    position: relative;
+    max-height: calc(var(--lh) * var(--max-lines));
     overflow: hidden;
+    padding-right: 1rem;
   }
+  .trunc::before {
+  position: absolute;
+  content: "...";
+  bottom: 0;
+  right: 0;
+}
+.trunc::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 1rem;
+  height: 1rem;
+  background: white;
+}
 
   .trunc:hover{
     color: black !important;

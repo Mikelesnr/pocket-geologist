@@ -73,7 +73,7 @@ function Header() {
                                 localStorage.getItem('user-info') ?
                                     <>
                                         <Nav.Link>
-                                            <Link to="/about">About Me</Link>
+                                            <Link to="/about">About</Link>
                                         </Nav.Link>
                                         <NavDropdown title={user && user.name}>
                                             <NavDropdown.Item onClick={Logout}>Logout</NavDropdown.Item>
