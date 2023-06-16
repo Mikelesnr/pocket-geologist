@@ -23,13 +23,13 @@ function Home() {
                     <br></br>
                     <h2 className="inner-landing-h2">The mineral database on the go</h2>
                 </div>
-                <Table className="col-sm-3">
+                <Table className="col-sm-3" style={{backgroundColor:"transparent"}}>
                     <tr>
                         <td>
                             {
                                 localStorage.getItem('user-info') ?
                                     <></> :
-                                    <>
+                                    <div style={{backgroundColor:"transparent"}}>
                                         <p className="col-sm-6 offset-3 text-light">
                                             Sign up for free and use our different search methods to navigate our mineral database.
                                             It's so easy to use that you can look for a mineral by simply typing its color in the
@@ -37,9 +37,9 @@ function Home() {
                                             mineral but doing tests and entering the results in the property search.
 
                                         </p>
-                                        <Link to="/login" ><button className="btn btn-danger btn-home">login</button></Link>
-                                        <Link to="/register"><button className="btn btn-dark btn-home">Signup</button></Link>
-                                    </>
+                                        <Link to="/login" ><button className="btn btn-danger btn-home" style={{marginRight:"10px"}}>login</button></Link>
+                                        <Link to="/register"><button className="btn btn-dark btn-home" style={{marginLeft:"10px"}}>Signup</button></Link>
+                                    </div>
                             }
                         </td>
                     </tr>
@@ -56,26 +56,31 @@ function Home() {
                                     </> :
                                     <>
             <div className="container d-flex justify-content-center text-center jstfy">
-                <Table className="col-sm-8 offset-2 align-self-center jstfy">
-                    <tr>
-                        <td>
-                            <div className="col-sm-8 mb pdng-top jstfy">
-                                <h3 className="">Get Started</h3>
-                                <br />
-                                <Link to="/register"><button className="btn btn-dark btn-home">Signup</button></Link>
-                                <br />
-                            </div>
-                        </td>
-                        <td>
-                            <p className="col-sm-4 jstfy">
-                                Are you a Geology intern? Maybe you are a student, or simply a mineral enthusiast.
-                                Join us and access our extensive library of minerals.
-                                If we don't have it we will add it soon.
-
-                            </p>
-                        </td>
-                    </tr>
-                </Table>
+                <section className="text-center row">
+                    <div className="col-lg-6 col-md-12 mb">
+            <div className="card bg-danger">
+              <div className="card-body">
+                <h3 className="card-title">Get Started</h3>
+                <p>
+                  <strong className="card-text">Join Us</strong>
+                  </p>
+                <Link to="/register"><button className="btn btn-dark btn-home">Signup</button></Link>
+                <br />
+              </div>
+            </div>
+          </div>
+           <div className="col-lg-6 col-md-12 mb">
+            <div className="card bg-danger">
+              <div className="card-body">
+                <p className="card-text" style={{maxWidth:"400px"}}>
+                    Are you a Geology intern? Maybe you are a student, or simply a mineral enthusiast.
+                    Join us and access our extensive library of minerals.
+                    If we don't have it we will add it soon.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
             </div>
             </>
             }
