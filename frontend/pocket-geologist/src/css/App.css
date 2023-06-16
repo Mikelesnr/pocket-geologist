@@ -258,3 +258,10 @@ html {
       max-height: 100px;
     }
   }
+
+  .center{
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    offset: 25%;
+  }

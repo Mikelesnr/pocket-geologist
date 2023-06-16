@@ -29,8 +29,8 @@ function Home() {
                             {
                                 localStorage.getItem('user-info') ?
                                     <></> :
-                                    <div style={{backgroundColor:"transparent"}}>
-                                        <p className="col-sm-6 offset-3 text-light">
+                                    <div className="" style={{backgroundColor:"transparent"}}>
+                                        <p className="col-md-6 col-sm-12 text-light offset-md-3">
                                             Sign up for free and use our different search methods to navigate our mineral database.
                                             It's so easy to use that you can look for a mineral by simply typing its color in the
                                             keyword search and comparing. For those with a bit more knowledge, you can identify the
@@ -72,7 +72,7 @@ function Home() {
            <div className="col-lg-6 col-md-12 mb">
             <div className="card bg-danger">
               <div className="card-body">
-                <p className="card-text" style={{maxWidth:"400px"}}>
+                <p className="card-text center" style={{maxWidth:"400px"}}>
                     Are you a Geology intern? Maybe you are a student, or simply a mineral enthusiast.
                     Join us and access our extensive library of minerals.
                     If we don't have it we will add it soon.
