@@ -7,6 +7,7 @@ use App\Models\HandSample;
 
 class HandSampleController extends Controller
 {
+
     //Adds mineral or updates mineral in database
     function editMineral(Request $req)
     {
@@ -33,6 +34,7 @@ class HandSampleController extends Controller
         $handSample->save();
         return $handSample;
     }
+
 
     //returns all minerals in the database
     function displayAll()
